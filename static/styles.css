@@ -1,0 +1,152 @@
+/* Global Styles */
+body {
+  margin: 0;
+  overflow: scroll;
+  background-color: var(--background-color-dark);
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  
+  /* CSS Variables for consistent spacing, colors, and design tokens */
+  --text-color: #E7f6ff;
+  --background-color-dark: #1f1f1f;
+  --background-color-light: #e7f6ff;
+  --primary-spacing: 1em;
+  --secondary-spacing: 2em;
+  --text-spacing: 0.5rem;
+  --card-bg-color: #1c1c1e;
+  --card-border-color: #1a1a1c;
+  --card-padding: 16px;
+  --card-radius: 8px;
+  --card-shadow-light: 0 5px 20px 5px rgba(0, 0, 0, 0.27);
+  --card-shadow-heavy: 0 5px 15px rgba(0, 0, 0, 0.6);
+  --animation-duration: 3.5s;
+}
+
+/* Reset default margins */
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: default;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--primary-spacing);
+}
+
+header img {
+  margin: var(--primary-spacing);
+  object-fit: cover;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+header h1, header h2, .tag-list {
+  margin: var(--text-spacing);
+}
+
+/* Tag Styles */
+.tag-list {
+  display: flex;
+  gap: var(--primary-spacing);
+}
+
+.tag {
+  color: var(--text-color);
+  padding: 2.5px 5px;
+  border-radius: 5px;
+}
+
+.tag--student {
+  background-color: green;
+}
+
+.tag--developer {
+  background-color: blue;
+}
+
+/* Horizontal line styles */
+hr {
+  width: 80%;
+  border: none;
+  border-top: 1px solid var(--text-color);
+}
+
+/* Main Content Styles */
+main {
+  margin: 0 10%;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-list-item {
+  background-color: var(--card-bg-color);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  border: 2px solid var(--card-border-color);
+  margin: var(--primary-spacing) 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-list-item:hover {
+  background-color: #333;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--primary-spacing);
+}
+
+footer a {
+  cursor: pointer;
+}
+
+/* Responsive Styles for Desktop */
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: var(--background-color-light);
+    overflow: hidden;
+  }
+
+  /* Animation for card floating effect */
+  @keyframes float {
+    0%, 100% {
+      box-shadow: var(--card-shadow-heavy);
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      box-shadow: 0 25px 15px rgba(0, 0, 0, 0.2);
+      transform: translate(-50%, -47.5%);
+    }
+  }
+
+  .card-container {
+    padding: var(--secondary-spacing);
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--card-radius);
+    background-color: var(--background-color-dark);
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+    animation: float var(--animation-duration) ease-in-out infinite;
+    box-shadow: var(--card-shadow-light);
+  }
+}
