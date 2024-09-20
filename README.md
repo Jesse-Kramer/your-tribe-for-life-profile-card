@@ -1,4 +1,4 @@
-# Profile cared
+# Profile card
 Een profile card waarin je alle informatie over mij kunt zien.
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/d400f51d-b87d-4274-8de6-c9396d2c8bd7">
